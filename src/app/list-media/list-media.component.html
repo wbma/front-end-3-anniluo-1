@@ -1,3 +1,23 @@
 <p>
-  list-media works!
+  {{ printThis }}
 </p>
+
+<div *ngFor="let stop of stopArray">
+  <h3> {{stop.name}} </h3>
+  <ul>
+    <li *ngFor="let line of stop.patterns">
+      <p> {{line.name}}</p>
+    </li>
+  </ul>
+
+
+</div>
+<div class="card-deck">
+  <div class="card" *ngFor="let media of mediaArray">
+    <img class="card-img-top" [src]="mediaService.mediaUrl + media.thumbnail" [alt]="media.title">
+    <div class="card-body">
+      <h5 class="card-title">{{ media.title }}</h5>
+      <p class="card-text">{{ media.description }}</p>
+    </div>
+  </div>
+</div>

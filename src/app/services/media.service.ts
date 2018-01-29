@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+
 
 @Injectable()
 export class MediaService {
 
-  mediaUrl = 'http://media.mw.metropolia.fi/wbma/';
-  imgUrl = '';
+  test = 'HelloWorld';
+  mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
+  apiUrl = 'http://media.mw.metropolia.fi/wbma';
 
   constructor(private http: HttpClient) { }
 
   getAllMedia() {
-    return this.http.get(this.mediaUrl + '/media');
+    return this.http.get(this.apiUrl + '/media');
   }
 }
