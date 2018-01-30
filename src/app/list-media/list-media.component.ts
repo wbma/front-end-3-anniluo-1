@@ -32,9 +32,9 @@ export class ListMediaComponent implements OnInit {
 
     });
 
-    this.digiTransitService.getRoutes('Gransinmäenportti').subscribe(response => {
-      console.log(response.data.stops);
-      this.stopArray = response.data.stops;
+    this.digiTransitService.getRoutes('Merivirta').subscribe(response => {
+      console.log(response['data'].stops);
+      this.stopArray = response['data'].stops;
     });
   }
 }

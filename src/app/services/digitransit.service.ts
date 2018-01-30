@@ -10,7 +10,7 @@ export class DigitransitService {
 
   getRoutes(stopName) {
     const body = `{
-      stops(name: ${stopName}{
+      stops(name:"${stopName}"){
         name
         patterns {
           name
@@ -34,6 +34,6 @@ export class DigitransitService {
       data: StopData;
     }
 
-    return this.http.post<ResponseData>(this.apiUrl, body, settings);
+    return this.http.post(this.apiUrl, body, settings);
   }
 }
